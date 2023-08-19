@@ -1,0 +1,2 @@
+DROP TABLE IF EXISTS memory;
+CREATE TABLE memory (id SERIAL PRIMARY KEY, imgsrc VARCHAR(255), description VARCHAR(4096), date DATE);
