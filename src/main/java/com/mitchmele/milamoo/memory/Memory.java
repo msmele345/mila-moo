@@ -1,14 +1,16 @@
 package com.mitchmele.milamoo.memory;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
+import lombok.Builder;
+import lombok.Data;
 
+import java.io.Serializable;
 import java.util.Date;
 
 
+@Data
 @Entity
-public class Memory {
+public class Memory implements Serializable {
 
     public Memory() {}
 
@@ -19,7 +21,7 @@ public class Memory {
     }
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
     private String imgsrc;
