@@ -1,0 +1,27 @@
+logging:
+  level:
+    org:
+     hibernate:
+      SQL: DEBUG
+
+spring:
+  datasource:
+    url: ${dburl}
+    username: mmad1
+    password: ${dbpassword}
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+  cloud:
+    azure:
+      compatibility-verifier:
+        enabled: false
+      keyvault:
+        secret:
+          property-sources[0]:
+            name: kv-properties-source-1
+            endpoint: https://kvdevapps1.vault.azure.net/
+          property-source-enabled: true
